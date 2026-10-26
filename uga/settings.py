@@ -142,7 +142,8 @@ INSTALLED_APPS = [
     "debug_toolbar",
 
     # local apps
-    "talent_acquisition.apps.TalentacquisitionConfig"
+    "basketball.apps.BasketballConfig",
+    "analytics.apps.AnalyticsConfig"
 ]
 
 MIDDLEWARE = [
@@ -193,7 +194,16 @@ DATABASES = {
         "PASSWORD": get_env_variable("DATABASE_PASSWORD"),
         "HOST": get_env_variable("DATABASE_HOST"),
         "PORT": get_env_variable("DATABASE_PORT"),
-    }
+    },
+    "raw": {
+        "ENGINE": "django.db.backends.postgresql",
+        "NAME": "data_dump_final",
+        "USER": get_env_variable("DATABASE_USER"),
+        "PASSWORD": get_env_variable("DATABASE_PASSWORD"),
+        "HOST": get_env_variable("DATABASE_HOST"),
+        "PORT": get_env_variable("DATABASE_PORT"),
+        # same credentials; sirf parhne ke liye
+    },
 }
 
 

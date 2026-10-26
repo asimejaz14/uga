@@ -21,7 +21,7 @@ from uga import settings
 from django.urls import path, include
 
 extra_patterns_v1 = [
-    path("talent-acquisition/", include("talent_acquisition.urls"))
+    path("talent-acquisition/", include("basketball.urls"))
 ]
 
 urlpatterns = [
